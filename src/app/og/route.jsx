@@ -6,9 +6,7 @@ export async function GET(request) {
     const { searchParams } = new URL(request.url);
     const name = searchParams.get("name");
 
-    const domain = `${request.headers.get(
-        "x-forwarded-proto"
-    )}://${request.headers.get("host")}`;
+    const domain = `https://${request.headers.get("host")}`;
     console.log(domain);
 
     const fontData1 = await fetch(
